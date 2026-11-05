@@ -111,7 +111,7 @@ create_bind(vars.kbWindowGroupCycleNext, hl.dsp.group.next(), repeating)
 create_bind(vars.kbWindowGroupCyclePrev, hl.dsp.group.prev(), repeating)
 create_bind(vars.kbToggleGroup, hl.dsp.group.toggle())
 create_bind(vars.kbUngroup, hl.dsp.window.move({ out_of_group = true }))
-create_bind(vars.kbGroupLockActive, hl.dsp.group.lock_active())
+create_bind(vars.kbGroupLockActive, hl.dsp.group.lock())
 
 -- Window actions
 for _, dir in ipairs({ "left", "right", "up", "down" }) do
@@ -203,6 +203,9 @@ create_bind(
 
 -- Sleep
 create_bind(vars.kbSleep, hl.dsp.exec_cmd(vars.sleepGestureCmd), locked)
+
+-- Keyboard layout switch
+create_bind("SUPER + Space", hl.dsp.exec_cmd("hyprctl switchxkblayout all next"))
 
 -- Clipboard and emoji picker
 create_bind(vars.kbClipboard, hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard"))

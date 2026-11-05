@@ -55,6 +55,11 @@ setopt hist_find_no_dups
 bindkey -v
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+bindkey "^[OH" beginning-of-line  # Home, as sent raw by foot outside tmux
+bindkey "^[OF" end-of-line        # End, as sent raw by foot outside tmux
+bindkey "^[[1~" beginning-of-line # Home, as tmux re-encodes it for tmux-256color
+bindkey "^[[4~" end-of-line       # End, as tmux re-encodes it for tmux-256color
+bindkey "^[[3~" delete-char       # Delete
 bindkey "^[[1;5C" forward-word   # Ctrl+Right
 bindkey "^[[1;5D" backward-word  # Ctrl+Left
 bindkey "^[[A" history-beginning-search-backward
@@ -92,6 +97,6 @@ function y() {
 alias rpi-imager='sudo QT_QPA_PLATFORM=wayland WAYLAND_DISPLAY=wayland-1 XDG_RUNTIME_DIR=/run/user/1000 rpi-imager'
 
 # auto-start tmux, attaching to an existing session if one's alive
-if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
-	tmux attach -t default 2>/dev/null || tmux new -s default
-fi
+# if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
+# 	tmux attach -t default 2>/dev/null || tmux new -s default
+# fi

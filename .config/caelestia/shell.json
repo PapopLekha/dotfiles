@@ -1,21 +1,49 @@
 {
+    "appearance": {
+        "transparency": {
+            "enabled": true
+        }
+    },
     "bar": {
         "entries": [
-            { "id": "logo", "enabled": true },
-            { "id": "clock", "enabled": true },
-            { "id": "spacer", "enabled": true },
-            { "id": "workspaces", "enabled": true },
-            { "id": "spacer", "enabled": true },
-            { "id": "tray", "enabled": true },
-            { "id": "statusIcons", "enabled": true },
-            { "id": "power", "enabled": true }
+            {
+                "enabled": true,
+                "id": "logo"
+            },
+            {
+                "enabled": true,
+                "id": "clock"
+            },
+            {
+                "enabled": true,
+                "id": "spacer"
+            },
+            {
+                "enabled": true,
+                "id": "workspaces"
+            },
+            {
+                "enabled": true,
+                "id": "spacer"
+            },
+            {
+                "enabled": true,
+                "id": "tray"
+            },
+            {
+                "enabled": true,
+                "id": "statusIcons"
+            },
+            {
+                "enabled": true,
+                "id": "power"
+            }
         ]
     },
     "general": {
         "idle": {
             "lockBeforeSleep": false,
-            "timeouts": [
-            ]
+            "timeouts": []
         }
     },
     "launcher": {
@@ -28,8 +56,8 @@
         ]
     },
     "services": {
-        "useFahrenheit": false,
-        "useFahrenheitPerformance": false,
-        "useTwelveHourClock": false
+        "weatherUnits": "Celsius",
+        "sensorUnits": "Celsius",
+        "clockFormat": "TwentyFourHour"
     }
 }
